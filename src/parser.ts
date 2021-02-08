@@ -559,7 +559,7 @@ export class Parser {
 
     let propTypeString = this.checker.typeToString(propType);
 
-    if (propType.isUnion()) {
+    if (propType.isUnion() && propTypeString !== 'boolean') {
       if (this.shouldExtractValuesFromUnion) {
         return {
           name: 'enum',
