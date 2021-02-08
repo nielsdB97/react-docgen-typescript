@@ -1285,6 +1285,23 @@ describe('parser', () => {
           }
         );
       });
+      it('does not affect boolean values', () => {
+        check(
+          'ExtractLiteralValuesFromUnion',
+          {
+            ExtractLiteralValuesFromUnion: {
+              sampleBoolean: {
+                type: 'boolean'
+              }
+            }
+          },
+          false,
+          null,
+          {
+            shouldExtractValuesFromUnion: true
+          }
+        );
+      });
     });
 
     describe('Returning not string default props ', () => {
